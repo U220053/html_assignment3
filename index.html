@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      .main-div {
+        height: 100vh;
+        width: 35rem;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .form_group {
+        display: flex;
+        align-items: start;
+      }
+      .form_item {
+        width: 35%;
+      }
+      .menu {
+        width: 78%;
+      }
+      .checkbox-container {
+        display: flex;
+        gap: 3em;
+        align-items: center;
+      }
+      .checkbox-item-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+      }
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+      }
+      .tickbox {
+        display: flex;
+        align-items: center;
+        gap: 0.6em;
+        margin-top: 0.5em;
+      }
+      button {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+      }
+
+      @media screen and (max-width: 600px) {
+        .form_group {
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .checkbox-container {
+          display: flex;
+          align-items: start;
+          flex-direction: column;
+          gap: 0em;
+        }
+        .checkbox-item-container {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          justify-content: space-around;
+        }
+        .checkbox-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: -10px;
+        }
+        .tickbox {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 0.6em;
+          margin-top: 0.6rem;
+        }
+        .tickbox-item {
+          margin-top: -8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="main-div">
+        <div class="form_group">
+          <div class="form_item">
+            <label for="firstname">First Name:<br /></label>
+            <input type="text" id="firstname" name="firstname" required />
+          </div>
+          <div class="form_item">
+            <label for="lastname">Last Name:<br /></label>
+            <input type="text" id="lastname" name="lastname" required />
+          </div>
+        </div>
+
+        <div class="form_group">
+          <div class="form_item">
+            <label for="email">Email:<br /></label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form_item">
+            <label for="number">Contact Number:<br /></label>
+            <input type="number" id="number" name="number" required />
+          </div>
+        </div>
+
+        <div class="form_group">
+          <div class="form_item">
+            <label for="username">Username:<br /></label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form_item">
+            <label for="password">Password:<br /></label>
+            <input type="password" id="password" name="password" required />
+          </div>
+        </div>
+
+        <div class="form_group">
+          <div class="form_item">
+            <label for="address">Address:<br /></label>
+            <textarea
+              id="address"
+              name="address"
+              rows="2"
+              cols="16"
+              required
+            ></textarea>
+          </div>
+          <div class="form_item">
+            <label for="gender">Gender:<br /></label>
+            <div class="tickbox">
+              <div class="tickbox-item">
+                <label style="display: flex; align-items: center">
+                  <input type="radio" name="gender" value="male" />
+                  Male
+                </label>
+              </div>
+              <div class="tickbox-item">
+                <label style="display: flex">
+                  <input type="radio" name="gender" value="female" />
+                  Female
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form_group">
+          <div class="form_item">
+            <label for="qualifications">Qualification:</label>
+            <select id="qualifications" name="qualifications" class="menu">
+              <option value="" disabled selected>--Select--</option>
+              <option value="B.Tech">B.Tech</option>
+              <option value="B.Sc">B.Sc</option>
+            </select>
+          </div>
+          <div class="form_item">
+            <label for="experience">Experience:</label>
+            <select id="experience" name="experience" class="menu">
+              <option value="" disabled selected>--Select--</option>
+              <option value="0 - 5 years">0 - 5 years</option>
+
+              <option value="5+ years">5+ years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="checkbox-container">
+          <p>Coding Languages:</p>
+          <div class="checkbox-item-container">
+            <div class="checkbox-item">
+              <input type="checkbox" id="c/c++" name="c/c++" />
+              <label for="c/c++">C/C++</label>
+            </div>
+
+            <div class="checkbox-item">
+              <input type="checkbox" id="java" name="java" />
+              <label for="java">Java</label>
+            </div>
+
+            <div class="checkbox-item">
+              <input type="checkbox" id="c#" name="c#" />
+              <label for="c#">C#</label>
+            </div>
+
+            <div class="checkbox-item">
+              <input type="checkbox" id="php" name="php" />
+              <label for="php">PHP</label>
+            </div>
+
+            <div class="checkbox-item">
+              <input type="checkbox" id="python" name="python" />
+              <label for="python">Python</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form_group">
+          <div class="form_item">
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
